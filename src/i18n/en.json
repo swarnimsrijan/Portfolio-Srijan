@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm Swarnim Srijan",
+    "subtitle": "Building meaningful things in tech, science, books & music.",
+    "button": "View My Work"
+  },
+  "journey": {
+    "title": "My Journey",
+    "description": "A timeline of my growth, work, and achievements"
+  }
+}
