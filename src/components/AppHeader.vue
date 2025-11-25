@@ -1,16 +1,15 @@
 <template>
   <header class="app-header">
 
-    <!-- BRAND AREA -->
     <router-link to="/" class="brand">
       <img src="/logo2.svg" class="brand-logo" />
       <span class="brand-name">{{ animatedName }}</span>
     </router-link>
 
-    <!-- CONTROLS AREA -->
+
     <div class="controls">
-      <ThemeSelector />
-      <ModeSelector />
+      <!-- <ThemeSelector /> -->
+      <!-- <ModeSelector /> -->
       <ThemeToggle />
       <button class="hamburger" @click="toggleSidebar">☰</button>
     </div>
@@ -28,9 +27,8 @@ import ModeSelector from "./ModeSelector.vue";
 import ThemeToggle from "./ThemeToggle.vue";
 
 const sidebarOpen = ref(false);
-const brandName = "swarnim_srijan";
+const brandName = "srijan";
 
-// Animated text
 const animatedName = ref("");
 let idx = 0;
 onMounted(() => {
