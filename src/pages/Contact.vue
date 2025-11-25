@@ -45,9 +45,11 @@
 
 <style scoped>
 .contact {
-  max-width: 700px;
-  margin: 0 auto;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px;
 }
+
 
 h2 {
   margin-bottom: 8px;

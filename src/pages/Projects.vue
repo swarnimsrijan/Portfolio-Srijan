@@ -51,9 +51,12 @@ const projects = [
 
 <style scoped>
 .projects {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
 }
+
 
 h2 {
   margin-bottom: 6px;

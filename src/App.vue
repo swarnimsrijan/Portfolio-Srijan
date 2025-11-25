@@ -41,8 +41,11 @@ import Header from './components/AppHeader.vue'
 
 main {
   flex: 1;
-  padding: 32px;
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0;     
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 </style>

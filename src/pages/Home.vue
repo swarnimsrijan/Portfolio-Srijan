@@ -17,9 +17,12 @@ import Journey from "../components/Journey.vue";
 
 <style scoped>
 .hero {
-  text-align: center;
+  width: 100vw;
+  min-height: calc(100vh - 80px); 
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 </style>
 

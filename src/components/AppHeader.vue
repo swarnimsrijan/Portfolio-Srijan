@@ -1,44 +1,70 @@
 <template>
-  <header class="header">
-    <router-link to="/" class="brand-area">
-      <img src="/logo2.svg" class="brand-logo" alt="logo" />
-      <span class="brand-name animate-text">swarnim_srijan</span>
+  <header class="app-header">
+
+    <!-- BRAND AREA -->
+    <router-link to="/" class="brand">
+      <img src="/logo2.svg" class="brand-logo" />
+      <span class="brand-name">{{ animatedName }}</span>
     </router-link>
 
-    <div class="actions">
-      <LocaleSwitcher />
+    <!-- CONTROLS AREA -->
+    <div class="controls">
+      <ThemeSelector />
+      <ModeSelector />
       <ThemeToggle />
+      <button class="hamburger" @click="toggleSidebar">☰</button>
     </div>
-
-    <button class="hamburger" @click="toggleSidebar">☰</button>
 
     <Sidebar :open="sidebarOpen" @close="sidebarOpen = false" />
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import Sidebar from './Sidebar.vue';
-import LocaleSwitcher from './LocaleSwitcher.vue';
-import ThemeToggle from './ThemeToggle.vue';
+import { ref, onMounted } from "vue";
+import { useModeStore } from "@/stores/mode";
+import Sidebar from "./SideBar.vue";
+import ThemeSelector from "./ThemeSelector.vue";
+import ModeSelector from "./ModeSelector.vue";
+import ThemeToggle from "./ThemeToggle.vue";
 
-const sidebarOpen = ref(false)
+const sidebarOpen = ref(false);
+const brandName = "swarnim_srijan";
+
+// Animated text
+const animatedName = ref("");
+let idx = 0;
+onMounted(() => {
+  function animate() {
+    if (idx < brandName.length) {
+      animatedName.value += brandName[idx];
+      idx++;
+      setTimeout(animate, 80);
+    }
+  }
+  animate();
+});
 
 function toggleSidebar() {
-  sidebarOpen.value = !sidebarOpen.value
+  sidebarOpen.value = !sidebarOpen.value;
 }
 </script>
 
 <style scoped>
-.header {
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 72px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 18px 24px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 12px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  z-index: 999;
 }
 
-.brand-area {
+.brand {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -52,35 +78,24 @@ function toggleSidebar() {
 }
 
 .brand-name {
-  font-weight: 700;
   font-size: 20px;
+  font-weight: 700;
   color: var(--text);
+  white-space: nowrap;
 }
 
-.animate-text {
-  opacity: 0;
-  animation: revealText 1.4s ease forwards;
-  letter-spacing: 2px;
-}
-
-@keyframes revealText {
-  0% {
-    opacity: 0;
-    transform: translateY(6px);
-    letter-spacing: 8px;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    letter-spacing: 2px;
-  }
+.controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .hamburger {
   font-size: 24px;
   background: none;
   border: none;
-  cursor: pointer;
   color: var(--text);
+  cursor: pointer;
 }
 </style>
