@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <img class="hero-logo" src="/icon.png" alt="logo" />
+    <!-- <img class="hero-log="/icon2.svg" alt="logo" /> -->
 
     <h1>{{ $t("hero.title") }}</h1>
     <p>{{ $t("hero.subtitle") }}</p>

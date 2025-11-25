@@ -1,47 +1,48 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div id="app">
+    <Header />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <main>
+      <router-view />
+    </main>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <!-- <Footer /> -->
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script setup lang="ts">
+import Header from './components/Header.vue'
+// import Footer from './components/Footer.vue'
+</script>
+
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #0b1220;
+  --primary: #D97706;
+  --muted: #6b7280;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+[data-theme="dark"] {
+  --bg: #0b0f14;
+  --text: #f3f4f6;
+  --primary: #FFD57A;
+  --muted: #9ca3af;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+#app {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  display: flex;
+  flex-direction: column;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+main {
+  flex: 1;
+  padding: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <img src="/icon.png" class="brand" alt="logo"/>
+    <img src="/logo2.svg" class="brand" alt="logo"/>
 
     <nav>
       <router-link to="/">{{ $t("nav.home") }}</router-link>

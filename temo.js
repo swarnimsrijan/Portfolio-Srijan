@@ -16,7 +16,8 @@ This single-file project contains a Vite + Vue 3 + TypeScript portfolio template
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-i18n": "^9.4.0"
   },
   "devDependencies": {
     "typescript": "^5.5.0",
