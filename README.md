@@ -1,2 +1,2 @@
 # Portfolio-Srijan
-A Protfolio website
+Portfolio website of Swarnim Srijan
