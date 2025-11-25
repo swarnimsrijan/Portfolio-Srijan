@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <Header />
+    <div class="header">
+      <Header />
+    </div>
 
     <main>
       <router-view />
@@ -19,14 +21,14 @@ import Header from './components/AppHeader.vue'
 :root {
   --bg: #ffffff;
   --text: #0b1220;
-  --primary: #D97706;
+  --primary: #d97706;
   --muted: #6b7280;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg: #0b0f14;
   --text: #f3f4f6;
-  --primary: #FFD57A;
+  --primary: #ffd57a;
   --muted: #9ca3af;
 }
 
@@ -34,7 +36,14 @@ import Header from './components/AppHeader.vue'
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
   display: flex;
   flex-direction: column;
 }
@@ -43,9 +52,15 @@ main {
   flex: 1;
   width: 100%;
   height: 100%;
-  padding: 0;     
+  padding: 0;
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
 }
+header {
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, var(--primary), transparent) 1;
+}
+
+
 </style>

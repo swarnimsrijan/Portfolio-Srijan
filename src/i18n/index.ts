@@ -9,9 +9,9 @@ const i18n = createI18n({
   messages: {}
 });
 
-i18n.global.t = async function (key: string) {
-  const locale = i18n.global.locale.value;
-  return await autoTranslate(key, locale);
-};
+// i18n.global.t = async function (key: string) {
+//   const locale = i18n.global.locale.value;
+//   return await autoTranslate(key, locale);
+// };
 
 export default i18n;

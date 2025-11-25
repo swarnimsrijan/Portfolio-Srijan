@@ -5,37 +5,47 @@
       Feel free to reach out for opportunities, collaborations, or just to say hi!
     </p>
 
-    <div class="contact-card">
-      <h3>Email</h3>
-      <a href="mailto:1142srijan2002@gmail.com">1142srijan2002@gmail.com</a>
-    </div>
+    <div class="grid">
+      <!-- Email -->
+      <a href="mailto:1142srijan2002@gmail.com" class="contact-box">
+        <div class="icon">
+          ✉️
+        </div>
+        <span>Email</span>
+      </a>
 
-    <div class="contact-card">
-      <h3>LinkedIn</h3>
+      <!-- LinkedIn -->
       <a
         href="https://www.linkedin.com/in/swarnim-srijan-220562214/"
         target="_blank"
         rel="noopener"
+        class="contact-box"
       >
-        Swarnim Srijan
+        <div class="icon">
+          🔗
+        </div>
+        <span>LinkedIn</span>
       </a>
-    </div>
 
-    <div class="contact-card">
-      <h3>GitHub</h3>
+      <!-- GitHub -->
       <a
         href="https://github.com/swarnimsrijan"
         target="_blank"
         rel="noopener"
+        class="contact-box"
       >
-        github.com/swarnimsrijan
+        <div class="icon">
+          🐙
+        </div>
+        <span>GitHub</span>
       </a>
-    </div>
 
-    <div class="contact-card">
-      <h3>Resume</h3>
-      <a href="/resume.pdf" target="_blank" download>
-        Download Resume (PDF)
+      <!-- Resume -->
+      <a href="/resume.pdf" target="_blank" download class="contact-box">
+        <div class="icon">
+          📄
+        </div>
+        <span>Resume</span>
       </a>
     </div>
   </section>
@@ -50,7 +60,6 @@
   padding: 40px;
 }
 
-
 h2 {
   margin-bottom: 8px;
 }
@@ -58,22 +67,41 @@ h2 {
 .intro {
   color: var(--muted);
   margin-bottom: 28px;
+  max-width: 500px;
 }
 
-.contact-card {
-  padding: 16px;
-  margin-bottom: 18px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.04);
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.contact-card h3 {
-  margin: 0 0 6px 0;
+.contact-box {
+  height: 140px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.1);
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.28s ease;
 }
 
-a {
-  font-weight: 600;
-  color: var(--primary);
+.contact-box:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.12);
+  border-color: var(--primary);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 </style>

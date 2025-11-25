@@ -20,10 +20,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { useModeStore } from "@/stores/mode";
+// import { useModeStore } from "@/stores/mode";
 import Sidebar from "./SideBar.vue";
-import ThemeSelector from "./ThemeSelector.vue";
-import ModeSelector from "./ModeSelector.vue";
+// import ThemeSelector from "./ThemeSelector.vue";
+// import ModeSelector from "./ModeSelector.vue";
 import ThemeToggle from "./ThemeToggle.vue";
 
 const sidebarOpen = ref(false);
