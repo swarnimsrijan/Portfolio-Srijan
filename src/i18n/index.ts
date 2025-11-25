@@ -1,10 +1,17 @@
 import { createI18n } from "vue-i18n";
-import en from "./en.json";
-import hi from "./hi.json";
+import { autoTranslate } from "@/services/translator";
 
-export default createI18n({
+
+const i18n = createI18n({
   legacy: false,
   locale: "en",
   fallbackLocale: "en",
-  messages: { en, hi }
+  messages: {}
 });
+
+i18n.global.t = async function (key: string) {
+  const locale = i18n.global.locale.value;
+  return await autoTranslate(key, locale);
+};
+
+export default i18n;

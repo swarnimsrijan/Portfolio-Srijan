@@ -14,3 +14,12 @@
 <script setup lang="ts">
 import Journey from "../components/Journey.vue";
 </script>
+
+<style scoped>
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
