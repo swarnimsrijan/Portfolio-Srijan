@@ -9,5 +9,17 @@ export const MESSAGES = {
   HERO_BUTTON: "View My Work",
 
   JOURNEY_TITLE: "My Journey",
-  JOURNEY_DESC: "A timeline of my growth, work, and achievements"
+  JOURNEY_DESC: "A timeline of my growth, work, and achievements",
+
+
+  CONTACT_TITLE: "Contact Me",
+  CONTACT_SUBTITLE: "Feel free to reach out for opportunities, collaborations, or just to say hi!",
+
+  CONTACT_EMAIL: "Email",
+  CONTACT_LINKEDIN: "LinkedIn",
+  CONTACT_GITHUB: "GitHub",
+  CONTACT_RESUME: "Resume",
+  CONTACT_LEETCODE: "LeetCode",
+  CONTACT_CODEFORCES: "Codeforces",
+  CONTACT_TWITTER: "Twitter"
 };

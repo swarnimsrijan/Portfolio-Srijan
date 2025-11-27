@@ -1,7 +1,11 @@
 <template>
-  <div class="hero">
+  <div class="home-title">
     <h1>{{ title }}</h1>
+  </div>
+  <div class="home-subtitle">
     <p>{{ subtitle }}</p>
+  </div>
+  <div class="home-button">
     <button>{{ button }}</button>
   </div>
 </template>
@@ -23,12 +27,10 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.hero {
-  width: 100vw;
-  /* min-height: calc(100vh - 80px); */
+.home-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
   display: flex;
-  /* align-items: center; */
-  justify-content: center;
-  padding: 20px;
 }
 </style>
