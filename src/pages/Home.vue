@@ -26,11 +26,11 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
+<!-- <style scoped>
 .home-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
   display: flex;
 }
-</style>
+</style> -->
