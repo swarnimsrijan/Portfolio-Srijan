@@ -1,20 +1,18 @@
 <template>
   <section class="contact">
-    <h2>Contact Me</h2>
+    <h2>{{ title }}</h2>
     <p class="intro">
-      Feel free to reach out for opportunities, collaborations, or just to say hi!
+      {{ subtitle }}
     </p>
 
     <div class="grid">
-      <!-- Email -->
       <a href="mailto:1142srijan2002@gmail.com" class="contact-box">
         <div class="icon">
-          ✉️
+          <img src="/email.svg" />
         </div>
-        <span>Email</span>
+        <span>{{ email }}</span>
       </a>
 
-      <!-- LinkedIn -->
       <a
         href="https://www.linkedin.com/in/swarnim-srijan-220562214/"
         target="_blank"
@@ -22,12 +20,12 @@
         class="contact-box"
       >
         <div class="icon">
-          🔗
+          <img src="/icons8-linkedin.svg" />
         </div>
-        <span>LinkedIn</span>
+        <span>{{ linkedin }}</span>
       </a>
 
-      <!-- GitHub -->
+
       <a
         href="https://github.com/swarnimsrijan"
         target="_blank"
@@ -35,23 +33,86 @@
         class="contact-box"
       >
         <div class="icon">
-          🐙
+          <img src="/github-mark-white.svg" />
         </div>
-        <span>GitHub</span>
+        <span>{{ github }}</span>
       </a>
 
-      <!-- Resume -->
-      <a href="/resume.pdf" target="_blank" download class="contact-box">
+
+      <!-- <a href="/resume.pdf" target="_blank" download class="contact-box">
         <div class="icon">
           📄
         </div>
-        <span>Resume</span>
+        <span>{{ resume }}</span>
+      </a> -->
+
+      <a
+        href="https://codeforces.com/profile/underdog42"
+        target="_blank"
+        rel="noopener"
+        class="contact-box"
+      >
+      <div class="icon">
+          📄
+        </div>
+        <span>{{ twitter }}</span>
+      </a>
+
+      <a
+        href="https://leetcode.com/u/itz_srijan42/"
+        target="_blank"
+        rel="noopener"
+        class="contact-box"
+      >
+        <div class="icon">
+          📄
+        </div>
+        <span>{{ leetcode }}</span>
+      </a>
+
+      <a
+        href="https://codeforces.com/profile/underdog42"
+        target="_blank"
+        rel="noopener"
+        class="contact-box"
+      >
+      <div class="icon">
+          📄
+        </div>
+        <span>{{ codeforces }}</span>
       </a>
     </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ta } from "@/services/translate";
+import { ref, onMounted } from "vue";
+import { MESSAGES } from '@/utils/constants';
+
+const title = ref("");
+const subtitle = ref("");
+const email = ref("");
+const linkedin = ref("");
+const github = ref("");
+const resume = ref("");
+const leetcode = ref("");
+const codeforces = ref("");
+const twitter = ref("");
+
+onMounted(async () => {
+  title.value = await ta(MESSAGES.CONTACT_TITLE);
+  subtitle.value = await ta(MESSAGES.CONTACT_SUBTITLE);
+  email.value = await ta(MESSAGES.CONTACT_EMAIL);
+  linkedin.value = await ta(MESSAGES.CONTACT_LINKEDIN);
+  github.value = await ta(MESSAGES.CONTACT_GITHUB);
+  resume.value = await ta(MESSAGES.CONTACT_RESUME);
+  leetcode.value = await ta(MESSAGES.CONTACT_LEETCODE);
+  codeforces.value = await ta(MESSAGES.CONTACT_CODEFORCES);
+  twitter.value = await ta(MESSAGES.CONTACT_TWITTER);
+});
+
+</script>
 
 <style scoped>
 .contact {
